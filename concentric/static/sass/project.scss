@@ -1,0 +1,40 @@
+// project specific CSS goes here
+
+////////////////////////////////
+		//Variables//
+////////////////////////////////
+
+// Alert colors
+
+$white: #fff;
+$mint-green: #d6e9c6;
+$black: #000;
+$pink: #f2dede;
+$dark-pink: #eed3d7;
+$red: #E31213;
+$darkGray: #1E1E1E;
+
+
+////////////////////////////////
+		//Alerts//
+////////////////////////////////
+
+// bootstrap alert CSS, translated to the django-standard levels of
+// debug, info, success, warning, error
+
+.logoHead{
+  width: 3em;
+  height: 3em;
+}
+
+.alert-debug {
+  background-color: $white;
+  border-color: $mint-green;
+  color: $black;
+}
+
+.alert-error {
+  background-color: $pink;
+  border-color: $dark-pink;
+  color: $red;
+}
