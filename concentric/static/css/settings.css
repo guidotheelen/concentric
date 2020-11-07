@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400;600;800&display=swap");
+a {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 400;
+}
+
+h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 600;
+  font-size: 1.5;
+}

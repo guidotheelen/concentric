@@ -1,12 +1,12 @@
 /* ==========================================================================
    #RESET
    ========================================================================== */
-
 /**
  * A very simple reset that sits on top of Normalize.css.
  */
-
-main { display: block; }
+main {
+  display: block;
+}
 
 body,
 h1, h2, h3, h4, h5, h6,
@@ -15,43 +15,34 @@ dl, dd, ol, ul,
 figure,
 hr,
 fieldset, legend {
-  margin:  0;
+  margin: 0;
   padding: 0;
 }
-
 
 /**
  * Remove trailing margins from nested lists.
  */
-
-li > {
-
-  ol,
-  ul {
-    margin-bottom: 0;
-  }
-
+li > ol,
+li > ul {
+  margin-bottom: 0;
 }
 
 /**
  * Prevent iOS from zooming to input
  */
-
-
 select {
   -webkit-appearance: none;
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  select {
     font-size: 16px;
   }
 }
 
-
-
 /**
  * Remove default table spacing.
  */
-
 table {
   border-collapse: collapse;
   border-spacing: 0;

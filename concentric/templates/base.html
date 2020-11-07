@@ -1,4 +1,6 @@
-{% load static i18n %}<!DOCTYPE html>
+{% load static i18n %}
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -25,7 +27,7 @@
     
     <!-- This file stores project-specific CSS -->
     
-    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
     
     
     {% endblock %}
@@ -39,7 +41,7 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="{% url 'home' %}"><img class="logoHead" src="../static/images/Concentric.svg" alt=""></a>
+        <a class="navbar-brand" href="{% url 'home' %}"><h2>Concentric</h2><img class="logoHead" src="{% static 'images/logos/Concentric2.svg' %}" alt=""></a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
@@ -50,10 +52,10 @@
               <a class="nav-link" href="{% url 'about' %}">About</a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">Profile</a>
+              <a class="nav-link" href="{% url 'metrics' %}">Metrics</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">Progress</a>
+              <a class="nav-link" href="{% url 'about' %}">Profile</a>
             </li>
             {% if request.user.is_authenticated %}
               <li class="nav-item">
@@ -89,7 +91,6 @@
       {% endif %}
 
       {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
       {% endblock content %}
 
     </div> <!-- /container -->

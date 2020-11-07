@@ -65,7 +65,6 @@ DJANGO_APPS = [
     # "django.contrib.humanize", # Handy template tags
     "django.contrib.admin",
     "django.forms",
-    "django_sass"
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",
@@ -76,10 +75,15 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "concentric.users.apps.UsersConfig",
+    "django_sass",
     # Your stuff: custom apps go here
 ]
+
+PROJECTAPPS = [
+    "metrics"
+]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS + PROJECTAPPS
 
 # MIGRATIONS
 # ------------------------------------------------------------------------------
