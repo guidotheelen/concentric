@@ -3,6 +3,6 @@ from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class MetricsView(LoginRequiredMixin, TemplateView):
+class FatpercentageView(LoginRequiredMixin, TemplateView):
 
-    template_name = "metrics.html"
+    template_name = "new_fatpercentage.html"

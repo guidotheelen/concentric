@@ -10,7 +10,6 @@ Keep track of all your fitness stats
      :target: https://github.com/ambv/black
      :alt: Black code style
 
-
 :License: MIT
 
 
@@ -68,7 +67,29 @@ Moved to `Live reloading and SASS compilation`_.
 .. _`Live reloading and SASS compilation`: http://cookiecutter-django.readthedocs.io/en/latest/live-reloading-and-sass-compilation.html
 
 
+Build CSS from SCSS
+^^^^^^^^^^^^^^^^^^^
 
+`python manage.py sass --watch concentric/static/sass/main.scss concentric/static/css/main.css`
+
+
+Install your local environment with pipenv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If pipenv is not installed:
+`brew install pipenv`
+
+Install the project with:
+`pipenv install`
+
+Start your local env with:
+`pipenv shell`
+
+
+Start a Django server
+^^^^^^^^^^^^^^^^^^^^^
+
+`./manage.py runserver`
 
 
 Deployment

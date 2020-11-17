@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+<img src="{% static 'my_app/example.jpg' %}" alt="My image">
+
+{% block content %}
+	<div class="sub_container">
+		<div class="choice_container">
+			<h2 class="container_title">Select your measurement type</h2>
+			<button class="type_button">
+				<h4 class="title">Jackson/Pollock 3</h4>
+				<p class="explanation">Chest, Abdominal, Thigh</p>
+				<div class="required_container">
+					<img class=tool_icon src="{% static 'images/icons/caliper.svg' %}" alt="caliper">
+					<p class="required_text">Caliper Required</p>
+				</div>
+			</button>
+			<button class="type_button">
+				<h4 class="title">Jackson/Pollock 4</h4>
+				<p class="explanation">Tricep, Abdominal, Suprailiac, Thigh</p>
+				<div class="required_container">
+					<img class=tool_icon src="{% static 'images/icons/caliper.svg' %}" alt="caliper">
+					<p class="required_text">Caliper Required</p>
+				</div>
+			</button>
+			<button class="type_button">
+				<h4 class="title">Jackson/Pollock 7</h4>
+				<p class="explanation">Chest, Axilla, Tricep, Subscapular, Abdominal, Suprailiac, Thigh</p>
+				<div class="required_container">
+					<img class=tool_icon src="{% static 'images/icons/caliper.svg' %}" alt="caliper">
+					<p class="required_text">Caliper Required</p>
+				</div>
+			</button>
+			<button class="type_button">
+				<h4 class="title">Durnin/Womersley</h4>
+				<p class="explanation">Bicep, Tricep, Chest, Subscapular, Suprailiac</p>
+				<div class="required_container">
+					<img class=tool_icon src="{% static 'images/icons/caliper.svg' %}" alt="caliper">
+					<p class="required_text">Caliper Required</p>
+				</div>
+			</button>
+			<button class="type_button">
+				<h4 class="title">Digital</h4>
+				<p class="explanation">Measurement using scale or resistance test</p>
+			</button>
+		</div>
+	</div>
+{% endblock content %}

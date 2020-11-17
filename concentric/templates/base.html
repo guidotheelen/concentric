@@ -41,11 +41,17 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="{% url 'home' %}"><h2>Concentric</h2><img class="logoHead" src="{% static 'images/logos/Concentric2.svg' %}" alt=""></a>
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <div class="logotext">
+            <h2>Concentric</h2>
+            <p class="subtitle">your body dashboard</p>
+          </div>
+          <img class="logoHead" src="{% static 'images/logos/Concentric2.svg' %}" alt="">
+        </a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <!-- <li class="nav-item active">
+<!--             <li class="nav-item active">
               <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
             </li> -->
             <!-- <li class="nav-item">
@@ -55,12 +61,12 @@
               <a class="nav-link" href="{% url 'metrics' %}">Metrics</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">Profile</a>
+              <a class="nav-link" href="{% url 'about' %}">Dashboard</a>
             </li>
             {% if request.user.is_authenticated %}
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
-                <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+                <a class="nav-link" href="{% url 'users:detail' request.user.username  %}"><img src="{% static 'images/icons/profile_in.svg' %}" alt="profile" class="account_icon"></a>
               </li>
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
@@ -69,11 +75,9 @@
             {% else %}
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
-                <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
-              </li>
-              <li class="nav-item">
-                {# URL provided by django-allauth/account/urls.py #}
-                <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+                <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">
+                  <img src="{% static 'images/icons/profile.svg' %}" alt="profile" class="account_icon">
+                </a>
               </li>
             {% endif %}
           </ul>

@@ -1,46 +1,138 @@
 {% extends "base.html" %}
+{% load static %}
+<img src="{% static 'my_app/example.jpg' %}" alt="My image">
 
 {% block content %}
 	<div class="category_container">
-		<a href="">
-			<div class="category">
-				<img src="" alt="" class="category_icon">
-				<h2 class="title">Lean body mass</h2>
-				<div class="button_container">
-					<a href="" class="new">+</a>
-					<a href="" class="stats"></a>
+		<div class="category">
+			<div class="category_content">
+				<img src="{% static 'images/metrics/CC_lean.svg' %}" alt="lean" class="category_icon">
+				<div class="title_container">
+					<h2 class="title">Fat percentage</h2>
+					<div class="button_container">
+						<a href="/metrics/new_fatpercentage/">
+							<div class="new_button">
+								+
+							</div>
+						</a>
+						<div class="edit_button">
+							Statistics
+						</div>
+					</div>
 				</div>
 			</div>
-		</a>
-		<a href="">
-			<div class="category">
-				<img src="" alt="" class="category_icon">
-				<h2 class="title">Strength</h2>
-				<div class="button_container">
-					<a href="" class="new">+</a>
-					<a href="" class="stats"></a>
+		</div>
+		<div class="category">
+			<div class="category_content">
+				<img src="{% static 'images/metrics/CC_size.svg' %}" alt="size" class="category_icon">
+				<div class="title_container">
+					<h2 class="title">Circumference</h2>
+					<div class="button_container">
+						<div class="new_button">
+							+
+						</div>
+						<div class="edit_button">
+							Statistics
+						</div>
+					</div>
 				</div>
 			</div>
-		</a>
-		<a href="">
-			<div class="category">
-				<img src="" alt="" class="category_icon">
-				<h2 class="title">Measurements</h2>
-				<div class="button_container">
-					<a href="" class="new">+</a>
-					<a href="" class="stats"></a>
+		</div>
+		<div class="category">
+			<div class="category_content">
+				<img src="{% static 'images/metrics/CC_strength.svg' %}" alt="strength" class="category_icon">
+				<div class="title_container">
+					<h2 class="title">Strength</h2>
+					<div class="button_container">
+						<div class="new_button">
+							+
+						</div>
+						<div class="edit_button">
+							Statistics
+						</div>
+					</div>
 				</div>
 			</div>
-		</a>
-		<a href="">
-			<div class="category">
-				<img src="" alt="" class="category_icon">
-				<h2 class="title">Weight</h2>
-				<div class="button_container">
-					<a href="" class="new">+</a>
-					<a href="" class="stats"></a>
+		</div>
+		<div class="category">
+			<div class="category_content">
+				<img src="{% static 'images/metrics/CC_weight.svg' %}" alt="weight" class="category_icon">
+				<div class="title_container">
+					<h2 class="title">Weight</h2>
+					<div class="button_container">
+						<div class="new_button">
+							+
+						</div>
+						<div class="edit_button">
+							Statistics
+						</div>
+					</div>
 				</div>
 			</div>
-		</a>
+		</div>
+		<div class="category">
+			<div class="category_content">
+				<img src="{% static 'images/metrics/CC_speed.svg' %}" alt="speed" class="category_icon">
+				<div class="title_container">
+					<h2 class="title">Speed</h2>
+					<div class="button_container">
+						<div class="new_button">
+							+
+						</div>
+						<div class="edit_button">
+							Statistics
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="category">
+			<div class="category_content">
+				<img src="{% static 'images/metrics/CC_frequency.svg' %}" alt="frequency" class="category_icon">
+				<div class="title_container">
+					<h2 class="title">Sport frequency</h2>
+					<div class="button_container">
+						<div class="new_button">
+							+
+						</div>
+						<div class="edit_button">
+							Statistics
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="category">
+			<div class="category_content">
+				<img src="{% static 'images/metrics/CC_supplement.svg' %}" alt="supplement" class="category_icon">
+				<div class="title_container">
+					<h2 class="title">Supplements</h2>
+					<div class="button_container">
+						<div class="new_button">
+							+
+						</div>
+						<div class="edit_button">
+							Statistics
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="category">
+			<div class="category_content">
+				<img src="{% static 'images/metrics/CC_water.svg' %}" alt="water" class="category_icon">
+				<div class="title_container">
+					<h2 class="title">Water</h2>
+					<div class="button_container">
+						<div class="new_button">
+							+
+						</div>
+						<div class="edit_button">
+							Statistics
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 {% endblock content %}

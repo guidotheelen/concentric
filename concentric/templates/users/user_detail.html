@@ -4,33 +4,35 @@
 {% block title %}User: {{ object.username }}{% endblock %}
 
 {% block content %}
-<div class="container">
-
-  <div class="row">
-    <div class="col-sm-12">
-
-      <h2>{{ object.username }}</h2>
-      {% if object.name %}
-        <p>{{ object.name }}</p>
-      {% endif %}
+<div class="profile-container">
+  <div class="profile-title">Personal Information</div>
+  <div class="personal-information-container">
+    <div class="fieldset">
+      <div class="name-title">First name:</div>
+      <input>{{ user.athlete.name }}</input>
+    </div>
+    <div class="fieldset">
+      <div class="name-title">Last name:</div>
+      <input>{{ user.athlete.surname }}</input>
+    </div>
+    <div class="fieldset">
+      <div class="name-title">Date of birth:</div>
+      <input>{{ user.athlete.date_of_birth }}</input>
+    </div>
+    <div class="fieldset">
+      <div class="name-title">Email:</div>
+      <input>{{ user.email }}</input>
     </div>
   </div>
+</div>
 
-{% if object == request.user %}
-<!-- Action buttons -->
 <div class="row">
 
-  <div class="col-sm-12">
-    <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My Info</a>
-    <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
-    <!-- Your Stuff: Custom user template urls -->
-  </div>
-
+<div class="col-sm-12">
+  <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My Info</a>
+  <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
+  <!-- Your Stuff: Custom user template urls -->
 </div>
-<!-- End Action buttons -->
-{% endif %}
 
-
-</div>
 {% endblock content %}
 
