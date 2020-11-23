@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load render_bundle from webpack_loader %}
+
 <img src="{% static 'my_app/example.jpg' %}" alt="My image">
 
 {% block content %}
@@ -45,3 +47,7 @@
 		</div>
 	</div>
 {% endblock content %}
+
+{% block javascript %}
+  {% render_bundle 'fatpercentage' %}
+{% endblock javascript %}
