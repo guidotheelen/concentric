@@ -55,6 +55,49 @@
           font-size: 0.8em;
         }
       }
+
+      &:focus{
+        outline:0;
+      }
+    }
+
+    .measurements_container{
+      display: table;
+      background-color: white;
+      border: 2px solid $dark-grey;
+      border-radius: $standard-radius;
+      padding-right: $medium-space;
+      padding-left: $medium-space;
+      padding-top: $small-space;
+      padding-bottom: $small-space;
+      color: $dark-grey;
+      margin-top: $small-space;
+      vertical-align:middle;
+
+      .form_container{
+        .submit{
+          margin-top: $small-space;
+        }
+      }
+
+      >*{
+        margin-bottom: $small-space;
+      }
+
+      .field{
+        display: table-row;
+        height: $medium-space;
+        vertical-align: middle;
+
+        input{
+          margin-left: $small-space;
+        }
+
+        >*{
+          margin-right: $tiny-space;
+          display: table-cell;
+        } 
+      }
     }
   }
 }

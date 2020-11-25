@@ -1,17 +1,19 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
 const BundleTracker = require('webpack-bundle-tracker');
-const MiniCssExtract = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+const isDevelopment = process.env.NODE_ENV === 'development'
 
 module.exports = {
+  mode: isDevelopment? "development" : "production",
   entry: {
     fatpercentage: resolve(__dirname, './concentric/static/js/pages/fatpercentage.js'),
     main: resolve(__dirname, './concentric/static/sass/main.scss'),
   },
   output: {
     filename: '[name].[contenthash].chunk.js',
-    // path: resolve(__dirname, './concentric/static/dist/')
-    path: resolve(__dirname, './concentric/static/webpack_bundles/')
+    path: resolve(__dirname, './concentric/static/dist/')
   },
   optimization: {
     noEmitOnErrors: true,
@@ -22,8 +24,9 @@ module.exports = {
   },
   plugins: [
       new BundleTracker({filename: './webpack-stats.json'}),
-      new MiniCssExtract({
-        filename: "[name].[contenthash].min.css"
+      new MiniCssExtractPlugin({
+        filename: isDevelopment ? '[name].css' : '[name].[hash].css',
+        chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
       })
   ],
   module: {
@@ -41,29 +44,41 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
-        use: [
-          MiniCssExtract.loader,
+        test: /\.module\.s(a|c)ss$/,
+        loader: [
+          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              url: false
+              modules: true,
+              sourceMap: isDevelopment
             }
           },
           {
-            loader: 'postcss-loader',
+            loader: 'sass-loader',
             options: {
-              postcssOptions: {
-                plugins: () => [require('autoprefixer'), require('cssnano')]
-              }
+              sourceMap: isDevelopment
             }
-          },
-          'sass-loader'
+          }
         ]
-      }
+      },
+      {
+         test: /\.s(a|c)ss$/,
+         exclude: /\.module.(s(a|c)ss)$/,
+         loader: [
+           isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+           'css-loader',
+           {
+             loader: 'sass-loader',
+             options: {
+               sourceMap: isDevelopment
+             }
+           }
+         ]
+       }
     ]
   },
   resolve: {
-      extensions: ['.js']
+      extensions: ['.js', '.scss']
   }
 }

@@ -199,8 +199,8 @@ TEMPLATES = [
 # See https://pypi.python.org/pypi/django-webpack-loader/0.4.1
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'CACHE': not DEBUG,
-        'BUNDLE_DIR_NAME': 'webpack_bundles/', # must end with slash
+        'CACHE': False,
+        'BUNDLE_DIR_NAME': 'dist/',
         'STATS_FILE': join(ROOT_DIR, 'webpack-stats.json'),
         'POLL_INTERVAL': 0.1,
         'TIMEOUT': None,
