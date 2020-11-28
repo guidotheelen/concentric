@@ -89,6 +89,23 @@
         height: $medium-space;
         vertical-align: middle;
 
+        .info_button{
+          color: unset;
+          background-color: unset;
+          border-color: unset;
+          padding: 0;
+          border: none;
+
+          &:focus{
+            outline:0;
+          }
+        }
+
+        .info{
+          margin-left: $small-space;
+          height: 24px;
+        }
+
         input{
           margin-left: $small-space;
         }
@@ -96,6 +113,7 @@
         >*{
           margin-right: $tiny-space;
           display: table-cell;
+          margin-bottom: $small-space;
         } 
       }
     }
