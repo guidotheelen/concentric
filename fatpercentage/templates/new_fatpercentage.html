@@ -6,9 +6,9 @@
 
 {% block content %}
 	<div class="sub_container">
-		<div class="choice_container">
-			<h2 class="container_title">Select your measurement type</h2>
-			<button class="type_button">
+		<div class="choice_container" v-cloak id="vue-fatpercentage-measurements">
+			<h2 class="container_title">Measurement type</h2>
+			<button class="type_button" v-on:click="choose_measurement('Pollock3')">
 				<h4 class="title">Jackson/Pollock 3</h4>
 				<p class="explanation">Chest, Abdominal, Thigh</p>
 				<div class="required_container">
@@ -16,7 +16,7 @@
 					<p class="required_text">Caliper Required</p>
 				</div>
 			</button>
-			<form class="measurements_container" action="/your-name/" method="post">
+			<form class="measurements_container" action="/your-name/" method="post" v-if="Pollock3">
 				<div class="form_container">
 					<div class="field">
 					    <label for="weight3">Current weight: </label>
@@ -50,7 +50,7 @@
 				    <input class="submit" type="submit" value="Calculate fatpercentage">
 			    </div>
 			</form>
-			<button class="type_button">
+			<button class="type_button" v-on:click="choose_measurement('Pollock4')">
 				<h4 class="title">Jackson/Pollock 4</h4>
 				<p class="explanation">Tricep, Abdominal, Suprailiac, Thigh</p>
 				<div class="required_container">
@@ -58,7 +58,7 @@
 					<p class="required_text">Caliper Required</p>
 				</div>
 			</button>
-			<form class="measurements_container" action="/your-name/" method="post">
+			<form class="measurements_container" action="/your-name/" method="post" v-if="Pollock4">
 				<div class="form_container">
 					<div class="field">
 					    <label for="weight4">Current weight: </label>
@@ -101,7 +101,7 @@
 				    <input class="submit" type="submit" value="Calculate fatpercentage">
 				</div>
 			</form>
-			<button class="type_button">
+			<button class="type_button" v-on:click="choose_measurement('Pollock7')">
 				<h4 class="title">Jackson/Pollock 7</h4>
 				<p class="explanation">Chest, Axilla, Tricep, Subscapular, Abdominal, Suprailiac, Thigh</p>
 				<div class="required_container">
@@ -109,7 +109,7 @@
 					<p class="required_text">Caliper Required</p>
 				</div>
 			</button>
-			<form class="measurements_container" action="/your-name/" method="post">
+			<form class="measurements_container" action="/your-name/" method="post" v-if="Pollock7">
 				<div class="form_container">
 					<div class="field">
 					    <label for="weight7">Current weight: </label>
@@ -175,7 +175,7 @@
 				    <input class="submit" type="submit" value="Calculate fatpercentage">
 				</div>
 			</form>
-			<button class="type_button">
+			<button class="type_button" v-on:click="choose_measurement('Womersley')">
 				<h4 class="title">Durnin/Womersley</h4>
 				<p class="explanation">Bicep, Tricep, Chest, Subscapular, Suprailiac</p>
 				<div class="required_container">
@@ -183,7 +183,7 @@
 					<p class="required_text">Caliper Required</p>
 				</div>
 			</button>
-			<form class="measurements_container" action="/your-name/" method="post">
+			<form class="measurements_container" action="/your-name/" method="post" v-if="Womersley">
 				<div class="form_container">
 					<div class="field">
 					    <label for="weightDW">Current weight: </label>
@@ -233,11 +233,11 @@
 				    <input class="submit" type="submit" value="Calculate fatpercentage">
 				</div>
 			</form>
-			<button class="type_button">
+			<button class="type_button" v-on:click="choose_measurement('Digital')">
 				<h4 class="title">Digital</h4>
 				<p class="explanation">Measurement using scale or resistance test</p>
 			</button>
-			<form class="measurements_container" action="/your-name/" method="post">
+			<form class="measurements_container" action="/your-name/" method="post" v-if="Digital">
 				<div class="form_container">
 					<div class="field">
 					    <label for="fatpercentage">Fatpercentage: </label>
