@@ -34,6 +34,13 @@
       color: $dark-grey;
       margin-top: $small-space;
 
+      &.active{
+        background-color: $light-grey;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom: none;
+      }
+
       &:hover{
         background-color: $light-grey;
       }
@@ -63,20 +70,48 @@
 
     .measurements_container{
       display: table;
-      background-color: white;
+      background-color: $transparant;
       border: 1px solid $dark-grey;
       border-radius: $standard-radius;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
       padding-right: $medium-space;
       padding-left: $medium-space;
-      padding-top: $small-space;
+      padding-top: $medium-space;
       padding-bottom: $small-space;
+      margin-top: -3px;
       color: $dark-grey;
-      margin-top: $small-space;
       vertical-align:middle;
+      border-top: none;
 
       .form_container{
         .submit{
           margin-top: $small-space;
+        }
+
+        .hint_container{
+          border-radius: $standard-radius;
+          border: 1px solid $dark-grey;
+          padding: $small-space;
+          margin-bottom: $small-space;
+          width: 20em;
+          position: relative;
+
+          .pointer{
+            z-index: 2;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin: $small-space;
+          }
+
+          > button {
+            z-index: 3;
+            cursor: pointer;
+            position: absolute;
+            right: $small-space;
+            top: $small-space;
+          }
         }
       }
 
@@ -89,26 +124,10 @@
         height: $medium-space;
         vertical-align: middle;
 
-        .info_button{
-          color: unset;
-          background-color: unset;
-          border-color: unset;
-          padding: 0;
-          border: none;
-
-          &:focus{
-            outline:0;
-          }
-        }
-
-        .info{
-          margin-left: $small-space;
-          height: 24px;
-        }
-
         input{
           margin-left: $small-space;
           margin-bottom: $small-space;
+          width: 3.5em;
         }
 
         >*{
@@ -119,4 +138,21 @@
       }
     }
   }
+}
+
+.info_button{
+  color: unset;
+  background-color: unset;
+  border-color: unset;
+  padding: 0;
+  border: none;
+
+  &:focus{
+    outline:0;
+  }
+}
+
+.info{
+  margin-left: $small-space;
+  height: 24px;
 }

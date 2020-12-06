@@ -72,7 +72,7 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
-    "webpack_loader",
+    "webpack_loader"
 ]
 
 LOCAL_APPS = [

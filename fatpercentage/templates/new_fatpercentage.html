@@ -8,7 +8,7 @@
 	<div class="sub_container">
 		<div class="choice_container" v-cloak id="vue-fatpercentage-measurements">
 			<h2 class="container_title">Measurement type</h2>
-			<button class="type_button" v-on:click="choose_measurement('Pollock3')">
+			<button class="type_button" v-on:click="choose_measurement('Pollock3')" v-bind:class="{ active: Pollock3 }">
 				<h4 class="title">Jackson/Pollock 3</h4>
 				<p class="explanation">Chest, Abdominal, Thigh</p>
 				<div class="required_container">
@@ -27,30 +27,54 @@
 					    <label for="Chest3">Chest measurement: </label>
 					    <input id="Chest3" type="number" name="Chest3" min="0">
 					    <label for="Chest3">MM</label>
-					    <button class="info_button" type="button">
-					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
-					    </button>
-				    </div>
+					    <button class="info_button" type="button" v-on:click="setHint('Chest3')">
+							<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
+						</button>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Chest3'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/chest.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="Abdominal3">Abdominal measurement: </label>
 					    <input id="Abdominal3" type="number" name="Abdominal3" min="0">
 					    <label for="Abdominal3">MM</label>
 					    <button class="info_button" type="button">
-					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
+					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info" v-on:click="setHint('Abdominal3')">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Abdominal3'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/abdominal.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="Thigh3">Thigh measurement: </label>
 					    <input id="Thigh3" type="number" name="Thigh3" min="0">
 					    <label for="Thigh3">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('Thigh3')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Thigh3'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/thigh.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <input class="submit" type="submit" value="Calculate fatpercentage">
 			    </div>
 			</form>
-			<button class="type_button" v-on:click="choose_measurement('Pollock4')">
+			<div class="hint_container">
+				
+			</div>
+			<button class="type_button" v-on:click="choose_measurement('Pollock4')" v-bind:class="{ active: Pollock4 }">
 				<h4 class="title">Jackson/Pollock 4</h4>
 				<p class="explanation">Tricep, Abdominal, Suprailiac, Thigh</p>
 				<div class="required_container">
@@ -64,44 +88,71 @@
 					    <label for="weight4">Current weight: </label>
 					    <input id="weight4" type="number" step="0.1" name="weight4" min="0">
 					    <label for="weight4">KG</label>
-				    </div>
+					</div>
 				    <div class="field">
 					    <label for="Tricep4">Tricep measurement: </label>
 					    <input id="Tricep4" type="number" name="Tricep4" min="0">
 					    <label for="Tricep4">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('Tricep4')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Tricep4'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/tricep.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="Abdominal4">Abdominal measurement: </label>
 					    <input id="Abdominal4" type="number" name="Abdominal4" min="0">
 					    <label for="Abdominal4">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('Abdominal4')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Abdominal4'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/abdominal.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="Suprailiac4">Suprailiac measurement: </label>
 					    <input id="Suprailiac4" type="number" name="Suprailiac4" min="0">
 					    <label for="Suprailiac4">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('Suprailiac4')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Suprailiac4'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/suprailiac.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="Thigh4">Thigh measurement: </label>
 					    <input id="Thigh4" type="number" name="Thigh4" min="0">
 					    <label for="Thigh4">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('Thigh4')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Thigh4'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/thigh.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <input class="submit" type="submit" value="Calculate fatpercentage">
 				</div>
 			</form>
-			<button class="type_button" v-on:click="choose_measurement('Pollock7')">
+			<button class="type_button" v-on:click="choose_measurement('Pollock7')" v-bind:class="{ active: Pollock7 }">
 				<h4 class="title">Jackson/Pollock 7</h4>
 				<p class="explanation">Chest, Axilla, Tricep, Subscapular, Abdominal, Suprailiac, Thigh</p>
 				<div class="required_container">
@@ -115,67 +166,116 @@
 					    <label for="weight7">Current weight: </label>
 					    <input id="weight7" type="number" step="0.1" name="weight7" min="0">
 					    <label for="weight7">KG</label>
-				    </div>
+					</div>
 				    <div class="field">
 					    <label for="Chest7">Chest: </label>
 					    <input id="Chest7" type="number" name="Chest7" min="0">
 					    <label for="Chest7">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('Chest7')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Chest7'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/chest.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="Tricep7">Tricep measurement: </label>
 					    <input id="Tricep7" type="number" name="Tricep7" min="0">
 					    <label for="Tricep7">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('Tricep7')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Tricep7'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/tricep.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="Axilla7">Axilla measurement: </label>
 					    <input id="Axilla7" type="number" name="Axilla7" min="0">
 					    <label for="Axilla7">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('Axilla7')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Axilla7'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/axilla.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="Abdominal7">Abdominal measurement: </label>
 					    <input id="Abdominal7" type="number" name="Abdominal7" min="0">
 					    <label for="Abdominal7">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('Abdominal7')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Abdominal7'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/abdominal.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="Subscapular7">Subscapular measurement: </label>
 					    <input id="Subscapular7" type="number" name="Subscapular7" min="0">
 					    <label for="Subscapular7">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('Subscapular7')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Subscapular7'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/subscapular.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="Thigh7">Thigh measurement: </label>
 					    <input id="Thigh7" type="number" name="Thigh7" min="0">
 					    <label for="Thigh7">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('Thigh7')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Thigh7'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/thigh.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="Suprailiac7">Suprailiac measurement: </label>
 					    <input id="Suprailiac7" type="number" name="Suprailiac7" min="0">
 					    <label for="Suprailiac7">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('Subscapular7')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'Subscapular7'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/suprailiac.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <input class="submit" type="submit" value="Calculate fatpercentage">
 				</div>
 			</form>
-			<button class="type_button" v-on:click="choose_measurement('Womersley')">
+			<button class="type_button" v-on:click="choose_measurement('Womersley')" v-bind:class="{ active: Womersley }">
 				<h4 class="title">Durnin/Womersley</h4>
 				<p class="explanation">Bicep, Tricep, Chest, Subscapular, Suprailiac</p>
 				<div class="required_container">
@@ -189,51 +289,86 @@
 					    <label for="weightDW">Current weight: </label>
 					    <input id="weightDW" type="number" step="0.1" name="weightDW" min="0">
 					    <label for="weightDW">KG</label>
-				    </div>
+					</div>
 				    <div class="field">
 					    <label for="BicepDW">Bicep measurement: </label>
 					    <input id="BicepDW" type="number" name="BicepDW" min="0">
 					    <label for="BicepDW">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('weightDW')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'BicepDW'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/bicep.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="TricepDW">Tricep measurement: </label>
 					    <input id="TricepDW" type="number" name="TricepDW" min="0">
 					    <label for="TricepDW">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('TricepDW')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'TricepDW'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/tricep.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				     <div class="field">
 					    <label for="ChestDW">Chest measurement: </label>
 					    <input id="ChestDW" type="number" name="ChestDW" min="0">
 					    <label for="ChestDW">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('ChestDW')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'ChestDW'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/chest.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="SubscapularDW">Subscapular measurement: </label>
 					    <input id="SubscapularDW" type="number" name="SubscapularDW" min="0">
 					    <label for="SubscapularDW">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('SubscapularDW')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'SubscapularDW'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/subscapular.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <div class="field">
 					    <label for="SuprailiacDW">Suprailiac measurement: </label>
 					    <input id="SuprailiacDW" type="number" name="SuprailiacDW" min="0">
 					    <label for="SuprailiacDW">MM</label>
-					    <button class="info_button" type="button">
+					    <button class="info_button" type="button" v-on:click="setHint('SuprailiacDW')">
 					    	<img class="info" src="{% static 'images/icons/info.svg' %}" alt="info">
 					    </button>
-				    </div>
+					</div>
+					<div class="hint_container" v-if="Hint == 'SuprailiacDW'">
+						<button class="info_button" type="button" v-on:click="setHint('')">
+							<img class="info" src="{% static 'images/icons/close.svg' %}" alt="info">
+						</button>
+						<img class="pointer" src="{% static 'images/fatpercentage/suprailiac.svg' %}" alt="body pointer">
+						<img src="{% static 'images/fatpercentage/greyBody.svg' %}" alt="body image">
+					</div>
 				    <input class="submit" type="submit" value="Calculate fatpercentage">
 				</div>
 			</form>
-			<button class="type_button" v-on:click="choose_measurement('Digital')">
+			<button class="type_button" v-on:click="choose_measurement('Digital')" v-bind:class="{ active: Digital }">
 				<h4 class="title">Digital</h4>
 				<p class="explanation">Measurement using scale or resistance test</p>
 			</button>

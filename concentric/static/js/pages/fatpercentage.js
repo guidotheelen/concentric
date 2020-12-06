@@ -2,6 +2,7 @@ export const FatpercentageMeasurements = new Vue({
     el: '#vue-fatpercentage-measurements',
     delimiters: ['${', '}'],
     data: {
+      Hint: "",
       Pollock3: false,
       Pollock4: false,
       Pollock7: false,
@@ -15,6 +16,9 @@ export const FatpercentageMeasurements = new Vue({
         this.Pollock7 = false;
         this.Womersley = false;
         this.Digital = false;
+      },
+      setHint: function (newHint) {
+        this.Hint = newHint;
       },
       choose_measurement: function (measurement) {
         this.turnOffAllMeasurements();
