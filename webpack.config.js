@@ -9,7 +9,8 @@ module.exports = {
   mode: isDevelopment? "development" : "production",
   entry: {
     fatpercentage: resolve(__dirname, './concentric/static/js/pages/fatpercentage.js'),
-    main: resolve(__dirname, './concentric/static/sass/main.scss'),
+    fatpercentage_stats: resolve(__dirname, './concentric/static/js/pages/fatpercentage_stats.js'),
+    main: resolve(__dirname, './concentric/static/sass/main.scss')
   },
   output: {
     filename: '[name].[contenthash].chunk.js',

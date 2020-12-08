@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block content %}
+
+    <H1>12345</H1>
+
+{% endblock content %}
+
+{% block javascript %}
+  {% render_bundle 'fatpercentage_stats' %}
+{% endblock javascript %}
