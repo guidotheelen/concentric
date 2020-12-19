@@ -1,5 +1,4 @@
 const { resolve } = require('path');
-const webpack = require('webpack');
 const BundleTracker = require('webpack-bundle-tracker');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -8,8 +7,8 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 module.exports = {
   mode: isDevelopment? "development" : "production",
   entry: {
-    fatpercentage: resolve(__dirname, './concentric/static/js/pages/fatpercentage.js'),
-    fatpercentage_stats: resolve(__dirname, './concentric/static/js/pages/fatpercentage_stats.js'),
+    fatpercentage: resolve(__dirname, './concentric/static/js/pages/fatpercentage'),
+    fatpercentage_stats: resolve(__dirname, './concentric/static/js/pages/fatpercentage-stats'),
     main: resolve(__dirname, './concentric/static/sass/main.scss')
   },
   output: {
